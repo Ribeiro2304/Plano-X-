@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PlanoX - SuaLoGo Aqui!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Orbitron&family=Playfair+Display&family=Poppins&family=Rubik+Moonrocks&family=Bebas+Neue&family=Indie+Flower&family=Shadows+Into+Light&family=Aclonica&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Monoton&family=Orbitron&family=Playfair+Display&family=Poppins&family=Press+Start+2P&family=Rubik+Moonrocks&family=Shadows+Into+Light&family=Bebas+Neue&family=Aclonica&family=Comic+Neue&family=Fredoka+One&family=Gloria+Hallelujah&family=Patrick+Hand&family=Shizuru&display=swap" rel="stylesheet" />
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -21,6 +24,7 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: #ffdd59;
+      user-select: none;
     }
     main {
       max-width: 900px;
@@ -42,19 +46,26 @@
     label {
       display: block;
       margin-top: 20px;
-      font-weight: bold;
+      font-weight: 700;
       color: #111;
+      user-select: none;
     }
     input,
     select {
       width: 100%;
       padding: 10px;
       font-size: 1rem;
-      margin-top: 5px;
+      margin-top: 8px;
       border-radius: 8px;
       border: 1px solid #ccc;
       box-sizing: border-box;
       color: #111;
+      cursor: pointer;
+      user-select: text;
+    }
+    select option {
+      font-size: 1.5rem; /* Emojis e fontes aparecem maiores no dropdown */
+      padding: 5px;
     }
     .examples {
       display: flex;
@@ -77,45 +88,6 @@
     .examples img:hover {
       transform: scale(1.1);
       box-shadow: 0 0 15px #ffdd59;
-    }
-    #emojiToggle {
-      margin-top: 15px;
-      padding: 8px 15px;
-      border-radius: 8px;
-      background-color: #eee;
-      border: 1px solid #ccc;
-      color: #111;
-      cursor: pointer;
-      font-weight: bold;
-      user-select: none;
-    }
-    #emojiPanel {
-      margin-top: 10px;
-      font-size: 2rem;
-      user-select: none;
-      color: #444;
-      display: none;
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 8px;
-      background: #fafafa;
-      max-width: 350px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-      gap: 8px;
-    }
-    #emojiPanel span {
-      cursor: pointer;
-      display: inline-block;
-      text-align: center;
-      padding: 5px 0;
-      transition: transform 0.15s;
-      border-radius: 6px;
-    }
-    #emojiPanel span:hover {
-      transform: scale(1.5);
-      background: #ffdd59;
-      color: #000;
     }
     .preview {
       margin-top: 30px;
@@ -146,6 +118,7 @@
       font-weight: bold;
       font-size: 1rem;
       cursor: pointer;
+      user-select: none;
     }
     .btn-whatsapp {
       background: #25d366;
@@ -189,48 +162,49 @@
     <label for="nomeMarca">Nome da marca:</label>
     <input type="text" id="nomeMarca" placeholder="Ex: Neo Arts" />
 
-    <label for="emojiExtra">Adicionar emoji ou símbolo:</label>
-    <input type="text" id="emojiExtra" placeholder="Ex: 🚀✨🔥❤️⚽🌹" />
-
-    <button id="emojiToggle" type="button" aria-expanded="false" aria-controls="emojiPanel">
-      Selecionar emoji
-    </button>
-    <div id="emojiPanel" aria-label="Painel de emojis selecionáveis">
-      <span>🚀</span>
-      <span>✨</span>
-      <span>🔥</span>
-      <span>❤️</span>
-      <span>⚽</span>
-      <span>🌹</span>
-      <span>🎨</span>
-      <span>⭐</span>
-      <span>💡</span>
-      <span>🎯</span>
-      <span>🚁</span>
-      <span>🎉</span>
-      <span>🌟</span>
-      <span>🎵</span>
-      <span>🌈</span>
-      <span>🎀</span>
-      <span>⚡</span>
-      <span>💎</span>
-      <span>🦄</span>
-      <span>🍀</span>
-    </div>
+    <label for="emojiSelect">Selecionar emoji/símbolo:</label>
+    <select id="emojiSelect" title="Selecione um emoji">
+      <option value="">Nenhum</option>
+      <option value="🚀">🚀</option>
+      <option value="✨">✨</option>
+      <option value="🔥">🔥</option>
+      <option value="❤️">❤️</option>
+      <option value="⚽">⚽</option>
+      <option value="🌹">🌹</option>
+      <option value="🎨">🎨</option>
+      <option value="⭐">⭐</option>
+      <option value="💡">💡</option>
+      <option value="🎯">🎯</option>
+      <option value="🚁">🚁</option>
+      <option value="🎉">🎉</option>
+      <option value="🌟">🌟</option>
+      <option value="🎵">🎵</option>
+      <option value="🌈">🌈</option>
+      <option value="🎀">🎀</option>
+      <option value="⚡">⚡</option>
+      <option value="💎">💎</option>
+      <option value="🦄">🦄</option>
+      <option value="🍀">🍀</option>
+    </select>
 
     <label for="fontSelect">Fonte:</label>
     <select id="fontSelect">
-      <option value="'Poppins', sans-serif">Poppins</option>
-      <option value="'Dancing Script', cursive">Dancing Script</option>
-      <option value="'Orbitron', sans-serif">Orbitron</option>
-      <option value="'Playfair Display', serif">Playfair Display</option>
-      <option value="'Monoton', cursive">Monoton</option>
-      <option value="'Rubik Moonrocks', cursive">Rubik Moonrocks</option>
-      <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
-      <option value="'Indie Flower', cursive">Indie Flower</option>
-      <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
-      <option value="'Aclonica', sans-serif">Aclonica</option>
-      <option value="'Press Start 2P', cursive">Press Start 2P</option>
+      <option value="'Poppins', sans-serif">Poppins (Limpa)</option>
+      <option value="'Dancing Script', cursive">Dancing Script (Delicada)</option>
+      <option value="'Orbitron', sans-serif">Orbitron (Futurista)</option>
+      <option value="'Playfair Display', serif">Playfair Display (Clássica)</option>
+      <option value="'Monoton', cursive">Monoton (Impacto)</option>
+      <option value="'Rubik Moonrocks', cursive">Rubik Moonrocks (Divertida)</option>
+      <option value="'Bebas Neue', sans-serif">Bebas Neue (Estilosa)</option>
+      <option value="'Indie Flower', cursive">Indie Flower (Despojada)</option>
+      <option value="'Shadows Into Light', cursive">Shadows Into Light (Delicada)</option>
+      <option value="'Aclonica', sans-serif">Aclonica (Moderna)</option>
+      <option value="'Press Start 2P', cursive">Press Start 2P (Pixel)</option>
+      <option value="'Comic Neue', cursive">Comic Neue (Divertida)</option>
+      <option value="'Fredoka One', cursive">Fredoka One (Fofo)</option>
+      <option value="'Gloria Hallelujah', cursive">Gloria Hallelujah (Escrita à mão)</option>
+      <option value="'Patrick Hand', cursive">Patrick Hand (Escrita natural)</option>
+      <option value="'Shizuru', cursive">Shizuru (Elegante)</option>
     </select>
 
     <label for="bgColorSelect">Cor de fundo:</label>
@@ -256,61 +230,36 @@
   </main>
   <footer>&copy; 2025 PlanoX</footer>
 
-  <!-- Importa o Twemoji para emojis coloridos -->
-  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script>
     const nomeInput = document.getElementById('nomeMarca');
-    const emojiInput = document.getElementById('emojiExtra');
+    const emojiSelect = document.getElementById('emojiSelect');
     const fontSelect = document.getElementById('fontSelect');
     const bgSelect = document.getElementById('bgColorSelect');
     const preview = document.getElementById('preview');
     const logoPreview = document.getElementById('logoPreview');
     const btnWhatsapp = document.getElementById('btnWhatsapp');
     const btnDownload = document.getElementById('btnDownload');
-    const emojiPanel = document.getElementById('emojiPanel');
-    const emojiToggle = document.getElementById('emojiToggle');
 
     function updatePreview() {
       const nome = nomeInput.value.trim() || 'Neo Arts';
-      const emoji = emojiInput.value.trim();
+      const emoji = emojiSelect.value;
       const fonte = fontSelect.value;
       const bg = bgSelect.value;
 
       logoPreview.textContent = nome + (emoji ? ' ' + emoji : '');
       logoPreview.style.fontFamily = fonte;
       preview.style.background = bg;
-
-      // Aplica o Twemoji para emojis coloridos na prévia
-      twemoji.parse(logoPreview, {
-        folder: 'svg',
-        ext: '.svg',
-      });
     }
 
-    emojiToggle.addEventListener('click', () => {
-      const isVisible = emojiPanel.style.display === 'grid';
-      emojiPanel.style.display = isVisible ? 'none' : 'grid';
-      emojiToggle.setAttribute('aria-expanded', String(!isVisible));
-    });
-
-    emojiPanel.addEventListener('click', (e) => {
-      if (e.target.tagName === 'SPAN') {
-        emojiInput.value += e.target.textContent;
-        updatePreview();
-        emojiInput.focus();
-      }
-    });
-
     nomeInput.addEventListener('input', updatePreview);
-    emojiInput.addEventListener('input', updatePreview);
+    emojiSelect.addEventListener('change', updatePreview);
     fontSelect.addEventListener('change', updatePreview);
     bgSelect.addEventListener('change', updatePreview);
 
     btnWhatsapp.addEventListener('click', () => {
       const nome = encodeURIComponent(nomeInput.value.trim() || 'Neo Arts');
-      const emoji = encodeURIComponent(emojiInput.value.trim());
+      const emoji = encodeURIComponent(emojiSelect.value);
       const fonteTexto = fontSelect.options[fontSelect.selectedIndex].text;
       const fundoTexto = bgSelect.options[bgSelect.selectedIndex].text;
       const numero = '5522992594046';
