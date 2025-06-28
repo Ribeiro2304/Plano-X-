@@ -6,7 +6,7 @@
   <title>PlanoX - SuaLoGo Aqui!</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Orbitron&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
       background: #0f0f3e;
@@ -31,51 +31,66 @@
     }
     h2 { text-align: center; margin-bottom: 30px; }
     label {
-      display:block;
-      font-weight:600;
-      margin:20px 0 10px;
+      display: block;
+      font-weight: 600;
+      margin: 20px 0 10px;
     }
     input, select {
-      width:100%;
-      padding:12px;
-      font-size:1rem;
-      border-radius:8px;
-      border:1px solid #ccc;
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .examples {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .examples img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fafafa;
     }
     .preview {
-      margin-top:30px;
-      width:100%;
-      height:200px;
-      border-radius:16px;
-      background:#f0f0f0;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      transition:background 0.3s ease;
+      margin-top: 30px;
+      width: 100%;
+      height: 200px;
+      border-radius: 16px;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s ease;
     }
     .preview h3 {
-      font-size:3rem;
-      margin:0;
-      color:#111;
+      font-size: 3rem;
+      margin: 0;
+      color: #111;
     }
     .btn-whatsapp {
-      display:block;
-      margin:40px auto 0;
-      background:#25d366;
-      color:white;
-      padding:15px 30px;
-      font-size:1.2rem;
-      border:none;
-      border-radius:50px;
-      cursor:pointer;
-      font-weight:bold;
+      display: block;
+      margin: 40px auto 0;
+      background: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
     }
     footer {
-      text-align:center;
-      margin-top:60px;
-      padding:20px;
-      background:#1d1d5e;
-      color:#aaa;
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      background: #1d1d5e;
+      color: #aaa;
     }
   </style>
 </head>
@@ -84,9 +99,18 @@
   <main>
     <h2>Crie sua Logo</h2>
 
-    <label for="nomeMarca">Nome da marca:</label>
-    <input type="text" id="nomeMarca" placeholder="Ex: Lucas Ribeiro">
+    <!-- Imagens de exemplo -->
+    <div class="examples">
+      <img src="https://via.placeholder.com/100x100?text=Logo+1" alt="Exemplo 1">
+      <img src="https://via.placeholder.com/100x100?text=Logo+2" alt="Exemplo 2">
+      <img src="https://via.placeholder.com/100x100?text=Logo+3" alt="Exemplo 3">
+    </div>
 
+    <!-- Entrada de nome -->
+    <label for="nomeMarca">Nome da marca:</label>
+    <input type="text" id="nomeMarca" placeholder="Ex: Neo Arts">
+
+    <!-- Fonte -->
     <label for="fontSelect">Escolha a fonte:</label>
     <select id="fontSelect">
       <option value="'Poppins', sans-serif">Poppins</option>
@@ -96,6 +120,7 @@
       <option value="'Monoton', cursive">Artística</option>
     </select>
 
+    <!-- Cor de fundo -->
     <label for="bgColorSelect">Escolha a cor do fundo:</label>
     <select id="bgColorSelect">
       <option value="white">Branco</option>
@@ -106,14 +131,17 @@
       <option value="#343a40">Cinza escuro</option>
     </select>
 
+    <!-- Pré-visualização -->
     <div class="preview" id="preview">
-      <h3 id="logoPreview">Lucas Ribeiro</h3>
+      <h3 id="logoPreview">Neo Arts</h3>
     </div>
 
+    <!-- Botão WhatsApp -->
     <button class="btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
   </main>
   <footer>&copy; 2025 PlanoX | Todos os direitos reservados</footer>
 
+  <!-- SCRIPT -->
   <script>
     const nomeInput = document.getElementById("nomeMarca");
     const fontSelect = document.getElementById("fontSelect");
@@ -123,7 +151,7 @@
     const btnWhatsapp = document.getElementById("btnWhatsapp");
 
     function updatePreview() {
-      const nome = nomeInput.value.trim() || "Lucas Ribeiro";
+      const nome = nomeInput.value.trim() || "Neo Arts";
       const fonte = fontSelect.value;
       const bg = bgSelect.value;
       logoPreview.textContent = nome;
@@ -136,7 +164,7 @@
     bgSelect.addEventListener("change", updatePreview);
 
     btnWhatsapp.addEventListener("click", () => {
-      const nome = encodeURIComponent(nomeInput.value.trim() || "Lucas Ribeiro");
+      const nome = encodeURIComponent(nomeInput.value.trim() || "Neo Arts");
       const fonteTexto = fontSelect.options[fontSelect.selectedIndex].text;
       const fundoTexto = bgSelect.options[bgSelect.selectedIndex].text;
       const numero = "5522992594046";
