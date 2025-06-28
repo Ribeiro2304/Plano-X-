@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PlanoX SuaLoGo Aqui! - Construindo Sua Imagem</title>
+  <title>PlanoX - SuaLoGo Aqui!</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
@@ -20,10 +20,9 @@
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     main {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       margin: 30px auto;
       max-width: 900px;
       padding: 30px;
@@ -34,47 +33,28 @@
       border-bottom: 2px solid #ffdd59;
       padding-bottom: 5px;
     }
-    p {
-      color: #ddd;
-      line-height: 1.6;
-    }
-    .portfolio {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 10px;
-      width: 200px;
-      text-align: center;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
+    label, input, select {
+      display: block;
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      margin-bottom: 15px;
+      font-size: 1rem;
     }
-    .card p {
-      color: #ffdd59;
+    input, select {
       padding: 10px;
-      font-weight: bold;
+      border-radius: 5px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
     }
-    .price-box {
-      background: #ffdd59;
-      color: #120f55;
-      font-weight: bold;
+    .preview {
+      margin-top: 20px;
       padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 10px;
       text-align: center;
-      margin: 10px 0;
+    }
+    .preview h3 {
+      font-size: 2rem;
+      margin: 0;
     }
     .btn-whatsapp {
       display: block;
@@ -88,7 +68,7 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      transition: background 0.3s ease;
+      cursor: pointer;
     }
     .btn-whatsapp:hover {
       background: #1ebe57;
@@ -99,58 +79,61 @@
       background: rgba(18,15,85,0.95);
       color: #aaa;
     }
-    @media(max-width: 768px) {
-      .portfolio {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>PlanoX SuaLoGo Aqui! - Criação de Logos</header>
+  <header>PlanoX - SuaLoGo Aqui!</header>
 
   <main>
     <section>
-      <h2>O que ofereço</h2>
-      <p>Crio logos profissionais e personalizadas para sua marca, negócio ou projeto. Atendimento rápido via WhatsApp para entender sua ideia e entregar o design ideal.</p>
-    </section>
+      <h2>Crie sua logo</h2>
+      <label for="nomeMarca">Nome da marca:</label>
+      <input type="text" id="nomeMarca" placeholder="Digite aqui...">
 
-    <section>
-      <h2>Escolha seu estilo de logo</h2>
-      <p>Selecione abaixo o estilo que mais combina com o seu projeto:</p>
-      <div class="portfolio">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1582560471165-5967ea84f2d4?auto=format&fit=crop&w=600&q=80" alt="Moderno">
-          <p>Moderno</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1624438251147-53d51943d56a?auto=format&fit=crop&w=600&q=80" alt="Minimalista">
-          <p>Minimalista</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1637679465093-282cfa9969fc?auto=format&fit=crop&w=600&q=80" alt="Criativo">
-          <p>Criativo</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1641211482577-3cf8f5b0aa53?auto=format&fit=crop&w=600&q=80" alt="Clássico">
-          <p>Clássico</p>
-        </div>
+      <label for="estiloLogo">Escolha o estilo:</label>
+      <select id="estiloLogo">
+        <option value="Moderno">Moderno</option>
+        <option value="Minimalista">Minimalista</option>
+        <option value="Criativo">Criativo</option>
+        <option value="Clássico">Clássico</option>
+      </select>
+
+      <div class="preview" id="preview">
+        <h3 id="logoPreview">Sua Marca</h3>
+        <p id="estiloPreview">Estilo: -</p>
       </div>
     </section>
 
-    <section>
-      <h2>Preços</h2>
-      <div class="price-box">Logo simples: R$ 50</div>
-      <div class="price-box">Logo personalizada com ícone: R$ 80</div>
-      <div class="price-box">Pacote com manual de identidade: R$ 150</div>
-    </section>
-
-    <section>
-      <a href="https://wa.me/55SEUNUMERO" class="btn-whatsapp" target="_blank">Falar no WhatsApp</a>
-    </section>
+    <button class="btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
   </main>
 
-  <footer>&copy; 2025 PlanoX SuaLoGo Aqui! | Todos os direitos reservados</footer>
+  <footer>&copy; 2025 PlanoX | Todos os direitos reservados</footer>
+
+  <script>
+    const nomeMarca = document.getElementById('nomeMarca');
+    const estiloLogo = document.getElementById('estiloLogo');
+    const logoPreview = document.getElementById('logoPreview');
+    const estiloPreview = document.getElementById('estiloPreview');
+    const btnWhatsapp = document.getElementById('btnWhatsapp');
+
+    function atualizarPreview() {
+      logoPreview.textContent = nomeMarca.value || 'Sua Marca';
+      estiloPreview.textContent = 'Estilo: ' + estiloLogo.value;
+    }
+
+    nomeMarca.addEventListener('input', atualizarPreview);
+    estiloLogo.addEventListener('change', atualizarPreview);
+
+    btnWhatsapp.addEventListener('click', () => {
+      const nome = encodeURIComponent(nomeMarca.value || "Sua Marca");
+      const estilo = encodeURIComponent(estiloLogo.value);
+      const numero = "55SEUNUMERO"; // substitua pelo seu número com DDD sem espaços
+      const mensagem = `Olá, quero uma logo no estilo ${estilo} com o nome ${nome}.`;
+      const url = `https://wa.me/${numero}?text=${mensagem}`;
+      window.open(url, '_blank');
+    });
+
+    atualizarPreview();
+  </script>
 </body>
 </html>
