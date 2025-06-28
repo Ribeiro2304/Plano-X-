@@ -1,194 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PlanoX SuaLoGo Aqui! - Criação de Logos,Montando Seu Sonho </title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  header {
-    background: #120f55;
-    padding: 20px 15px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
-  main {
-    flex: 1;
-    max-width: 900px;
-    margin: 40px auto;
-    background: #1c1464dd;
-    border-radius: 15px;
-    padding: 30px 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  }
-  section {
-    margin-bottom: 40px;
-  }
-  h2 {
-    font-weight: 600;
-    font-size: 1.8rem;
-    border-bottom: 3px solid #ffdd59;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    color: #ffdd59;
-  }
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ddd;
-  }
-  /* Portfólio */
-  .portfolio {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .card {
-    background: #2b2388;
-    border-radius: 12px;
-    width: 250px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px #ffdd59;
-  }
-  .card img {
-    width: 100%;
-    display: block;
-  }
-  .card p {
-    padding: 15px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #ffdd59;
-  }
-  /* Preços */
-  .prices {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .price-box {
-    background: #ffdd59;
-    color: #120f55;
-    flex: 1 1 220px;
-    border-radius: 12px;
-    padding: 25px 20px;
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(255, 221, 89, 0.5);
-    transition: background-color 0.3s ease;
-  }
-  .price-box:hover {
-    background-color: #e6c845;
-  }
-  /* WhatsApp Button */
-  .btn-whatsapp {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    background: #25d366;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.5rem;
-    padding: 15px 40px;
-    border-radius: 50px;
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
-    text-decoration: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  .btn-whatsapp:hover {
-    background-color: #1ebe57;
-    box-shadow: 0 12px 30px rgba(30, 200, 80, 0.9);
-  }
-  footer {
-    background: #120f55;
-    color: #999;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9rem;
-    margin-top: auto;
-  }
-  @media(max-width: 720px) {
-    .portfolio, .prices {
-      flex-direction: column;
-      align-items: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlanoX SuaLoGo Aqui! - Construindo Sua Imagem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1611078489935-0cb9640b28e6?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
     }
-    .card, .price-box {
-      width: 80%;
+    header {
+      background: rgba(18,15,85,0.95);
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
-  }
-</style>
+    main {
+      background: rgba(0, 0, 0, 0.7);
+      margin: 30px auto;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 15px;
+    }
+    h2 {
+      color: #ffdd59;
+      border-bottom: 2px solid #ffdd59;
+      padding-bottom: 5px;
+    }
+    p {
+      color: #ddd;
+      line-height: 1.6;
+    }
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card p {
+      color: #ffdd59;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .price-box {
+      background: #ffdd59;
+      color: #120f55;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 10px 0;
+    }
+    .btn-whatsapp {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 40px;
+      font-size: 1.3rem;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(18,15,85,0.95);
+      color: #aaa;
+    }
+    @media(max-width: 768px) {
+      .portfolio {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-  PlanoX SuaLoGo Aqui! - Criação de Logos
-</header>
-<main>
-  <section>
-    <h2>O que ofereço</h2>
-    <p>Crio logos profissionais e personalizadas para sua marca, negócio ou projeto. Atendimento rápido via WhatsApp para entender sua ideia e entregar o design ideal.</p>
-  </section>
-  <section>
-    <h2>Portfólio</h2>
-    <div class="portfolio">
-      <div class="card">
-        <img src="https://via.placeholder.com/250x250?text=Logo+Moderno" alt="Logo Moderno" />
-        <p>Logo Moderno</p>
+  <header>PlanoX SuaLoGo Aqui! - Criação de Logos</header>
+
+  <main>
+    <section>
+      <h2>O que ofereço</h2>
+      <p>Crio logos profissionais e personalizadas para sua marca, negócio ou projeto. Atendimento rápido via WhatsApp para entender sua ideia e entregar o design ideal.</p>
+    </section>
+
+    <section>
+      <h2>Escolha seu estilo de logo</h2>
+      <p>Selecione abaixo o estilo que mais combina com o seu projeto:</p>
+      <div class="portfolio">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1582560471165-5967ea84f2d4?auto=format&fit=crop&w=600&q=80" alt="Moderno">
+          <p>Moderno</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1624438251147-53d51943d56a?auto=format&fit=crop&w=600&q=80" alt="Minimalista">
+          <p>Minimalista</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1637679465093-282cfa9969fc?auto=format&fit=crop&w=600&q=80" alt="Criativo">
+          <p>Criativo</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1641211482577-3cf8f5b0aa53?auto=format&fit=crop&w=600&q=80" alt="Clássico">
+          <p>Clássico</p>
+        </div>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/250x250?text=Logo+Minimalista" alt="Logo Minimalista" />
-        <p>Logo Minimalista</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/250x250?text=Logo+Colorido" alt="Logo Colorido" />
-        <p>Logo Colorido</p>
-      </div>
-    </div>
-  </section>
-  <section>
-    <h2>Preços</h2>
-    <div class="prices">
-      <div class="price-box">Logo simples (texto + forma): R$ 50</div>
-      <div class="price-box">Logo com ícones personalizados: R$ 80</div>
-      <div class="price-box">Pacote completo com manual de identidade: R$ 150</div>
-    </div>
-  </section>
-  <section>
-    <p style="text-align:center; margin-top: 40px;">
-      Para encomendar sua logo, clique no botão abaixo e fale comigo no WhatsApp. Vou tirar suas dúvidas e combinar todos os detalhes.
-    </p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
-  </section>
-</main>
-<footer>
-  &copy; 2025 PlanoX SuaLoGo Aqui! | Todos os direitos reservados
-</footer>
+    </section>
+
+    <section>
+      <h2>Preços</h2>
+      <div class="price-box">Logo simples: R$ 50</div>
+      <div class="price-box">Logo personalizada com ícone: R$ 80</div>
+      <div class="price-box">Pacote com manual de identidade: R$ 150</div>
+    </section>
+
+    <section>
+      <a href="https://wa.me/55SEUNUMERO" class="btn-whatsapp" target="_blank">Falar no WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>&copy; 2025 PlanoX SuaLoGo Aqui! | Todos os direitos reservados</footer>
 </body>
 </html>
