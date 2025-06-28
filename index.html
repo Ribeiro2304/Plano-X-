@@ -32,14 +32,15 @@
     .intro-text {
       text-align: center;
       font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #333;
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      color: #222;
     }
     label {
       display: block;
       margin-top: 20px;
       font-weight: bold;
+      color: #111;
     }
     input, select {
       width: 100%;
@@ -48,44 +49,48 @@
       margin-top: 5px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      box-sizing: border-box;
+      color: #111;
     }
     .examples {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       justify-content: center;
-      margin: 20px 0;
+      margin: 20px 0 40px 0;
       flex-wrap: wrap;
     }
     .examples img {
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
       border-radius: 10px;
       border: 1px solid #ddd;
       background: #fafafa;
-      box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: transform 0.2s;
     }
     .examples img:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 10px #ffdd59;
+      box-shadow: 0 0 15px #ffdd59;
     }
     .emoji-list {
-      margin-top: 8px;
-      font-size: 1.8rem;
+      margin-top: 10px;
+      font-size: 2rem;
       user-select: none;
+      color: #444;
     }
     .emoji-list span {
       cursor: pointer;
-      margin-right: 8px;
+      margin-right: 10px;
       transition: transform 0.15s;
+      display: inline-block;
     }
     .emoji-list span:hover {
-      transform: scale(1.4);
+      transform: scale(1.5);
     }
     .preview {
-      margin-top: 25px;
+      margin-top: 30px;
       background: #f0f0f0;
       height: 220px;
       border-radius: 12px;
@@ -93,15 +98,15 @@
       align-items: center;
       justify-content: center;
       box-shadow: inset 0 0 10px #ccc;
+      user-select: none;
     }
     .preview h3 {
       font-size: 3rem;
       margin: 0;
-      user-select: none;
     }
     .btn {
       display: block;
-      margin: 20px auto 0;
+      margin: 25px auto 0;
       padding: 12px 24px;
       border: none;
       border-radius: 30px;
@@ -131,7 +136,7 @@
     <label for="emojiExtra">Adicionar emoji ou símbolo:</label>
     <input type="text" id="emojiExtra" placeholder="Ex: 🚀✨🔥❤️⚽🌹" />
 
-    <div class="emoji-list" id="emojiList">
+    <div class="emoji-list" id="emojiList" aria-label="Emojis clicáveis para adicionar">
       <span>🚀</span>
       <span>✨</span>
       <span>🔥</span>
@@ -177,8 +182,8 @@
       <h3 id="logoPreview">Neo Arts</h3>
     </div>
 
-    <button class="btn btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
-    <button class="btn btn-download" id="btnDownload">Baixar Logo (PNG)</button>
+    <button class="btn btn-whatsapp" id="btnWhatsapp" type="button">Falar no WhatsApp</button>
+    <button class="btn btn-download" id="btnDownload" type="button">Baixar Logo (PNG)</button>
   </main>
   <footer>&copy; 2025 PlanoX</footer>
 
@@ -205,7 +210,6 @@
       preview.style.background = bg;
     }
 
-    // Adicionar emoji clicado no campo emojiInput
     emojiList.addEventListener("click", e => {
       if (e.target.tagName === "SPAN") {
         emojiInput.value += e.target.textContent;
