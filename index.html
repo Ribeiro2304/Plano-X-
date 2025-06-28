@@ -1,139 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PlanoX - SuaLoGo Aqui!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1611078489935-0cb9640b28e6?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-    header {
-      background: rgba(18,15,85,0.95);
-      padding: 20px;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    main {
-      background: rgba(0, 0, 0, 0.75);
-      margin: 30px auto;
-      max-width: 900px;
-      padding: 30px;
-      border-radius: 15px;
-    }
-    h2 {
-      color: #ffdd59;
-      border-bottom: 2px solid #ffdd59;
-      padding-bottom: 5px;
-    }
-    label, input, select {
-      display: block;
-      width: 100%;
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-    input, select {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      font-family: 'Poppins', sans-serif;
-    }
-    .preview {
-      margin-top: 20px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      text-align: center;
-    }
-    .preview h3 {
-      font-size: 2rem;
-      margin: 0;
-    }
-    .btn-whatsapp {
-      display: block;
-      width: fit-content;
-      margin: 30px auto;
-      background: #25d366;
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 40px;
-      font-size: 1.3rem;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      cursor: pointer;
-    }
-    .btn-whatsapp:hover {
-      background: #1ebe57;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: rgba(18,15,85,0.95);
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PlanoX - Criador de Logos</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #222;
+    color: #eee;
+    padding: 20px;
+  }
+  label, select, input {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  input, select {
+    padding: 8px;
+    width: 200px;
+  }
+  #preview {
+    margin-top: 30px;
+    padding: 40px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+</style>
 </head>
 <body>
-  <header>PlanoX - SuaLoGo Aqui!</header>
+  <h1>PlanoX - Criador de Logos</h1>
+  
+  <label for="nomeMarca">Nome da Marca:</label>
+  <input type="text" id="nomeMarca" placeholder="Digite o nome da marca" />
 
-  <main>
-    <section>
-      <h2>Crie sua logo</h2>
-      <label for="nomeMarca">Nome da marca:</label>
-      <input type="text" id="nomeMarca" placeholder="Digite aqui...">
+  <label for="fontSelect">Escolha a Fonte:</label>
+  <select id="fontSelect">
+    <option value="Arial, sans-serif">Arial</option>
+    <option value="'Courier New', Courier, monospace">Courier New</option>
+    <option value="'Georgia', serif">Georgia</option>
+  </select>
 
-      <label for="estiloLogo">Escolha o estilo:</label>
-      <select id="estiloLogo">
-        <option value="Moderno">Moderno</option>
-        <option value="Minimalista">Minimalista</option>
-        <option value="Criativo">Criativo</option>
-        <option value="Clássico">Clássico</option>
-      </select>
+  <label for="bgColorSelect">Escolha a Cor do Fundo:</label>
+  <select id="bgColorSelect">
+    <option value="#333">Cinza Escuro</option>
+    <option value="#0a74da">Azul</option>
+    <option value="#f9a825">Amarelo</option>
+  </select>
 
-      <div class="preview" id="preview">
-        <h3 id="logoPreview">Sua Marca</h3>
-        <p id="estiloPreview">Estilo: -</p>
-      </div>
-    </section>
+  <div id="preview">Sua Logo Aqui</div>
 
-    <button class="btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
-  </main>
+<script>
+  const nomeMarca = document.getElementById('nomeMarca');
+  const fontSelect = document.getElementById('fontSelect');
+  const bgColorSelect = document.getElementById('bgColorSelect');
+  const preview = document.getElementById('preview');
 
-  <footer>&copy; 2025 PlanoX | Todos os direitos reservados</footer>
+  function atualizarPreview() {
+    preview.textContent = nomeMarca.value || 'Sua Logo Aqui';
+    preview.style.fontFamily = fontSelect.value;
+    preview.style.backgroundColor = bgColorSelect.value;
+  }
 
-  <script>
-    const nomeMarca = document.getElementById('nomeMarca');
-    const estiloLogo = document.getElementById('estiloLogo');
-    const logoPreview = document.getElementById('logoPreview');
-    const estiloPreview = document.getElementById('estiloPreview');
-    const btnWhatsapp = document.getElementById('btnWhatsapp');
-
-    function atualizarPreview() {
-      logoPreview.textContent = nomeMarca.value || 'Sua Marca';
-      estiloPreview.textContent = 'Estilo: ' + estiloLogo.value;
-    }
-
-    nomeMarca.addEventListener('input', atualizarPreview);
-    estiloLogo.addEventListener('change', atualizarPreview);
-
-    btnWhatsapp.addEventListener('click', () => {
-      const nome = encodeURIComponent(nomeMarca.value || "Sua Marca");
-      const estilo = encodeURIComponent(estiloLogo.value);
-      const numero = "55SEUNUMERO"; // substitua pelo seu número com DDD sem espaços
-      const mensagem = `Olá, quero uma logo no estilo ${estilo} com o nome ${nome}.`;
-      const url = `https://wa.me/${numero}?text=${mensagem}`;
-      window.open(url, '_blank');
-    });
-
-    atualizarPreview();
-  </script>
-</body>
-</html>
+  nomeMarca.addEventListener('input', atualizarPreview);
+  fontSelect.addEventListener('change', atualizarPreview);
+  bgColorSelect.addEventListener('change
