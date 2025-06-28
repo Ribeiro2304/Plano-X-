@@ -1,129 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PlanoX - SuaLoGo Aqui!</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: url('https://images.unsplash.com/photo-1611078489935-0cb9640b28e6?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-  }
-  header {
-    background: rgba(18,15,85,0.95);
-    padding: 20px;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffdd59;
-    user-select: none;
-  }
-  main {
-    background: rgba(255, 255, 255, 0.95);
-    margin: 30px auto;
-    max-width: 700px;
-    padding: 25px 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(18,15,85,0.4);
-    color: #121055;
-  }
-  h2 {
-    border-bottom: 2px solid #121055;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 1.8rem;
-    user-select: none;
-  }
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-    font-size: 1rem;
-    user-select: none;
-  }
-  input[type="text"], select {
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: 7px;
-    border: 2px solid #121055;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 18px;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-    color: #121055;
-  }
-  input[type="text"]:focus, select:focus {
-    outline: none;
-    background-color: #f0f8ff;
-    border-color: #ffdd59;
-    color: #121055;
-  }
-  .preview {
-    margin-top: 15px;
-    width: 320px;
-    height: 180px;
-    border-radius: 20px;
-    background-color: white; /* padrão branco */
-    box-shadow: 0 4px 15px rgba(18,15,85,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 0.5s ease;
-  }
-  .preview h3 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 3rem;
-    color: #121055;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-    transition: font-family 0.3s ease, color 0.3s ease;
-    text-align: center;
-    user-select: text;
-  }
-  .btn-whatsapp {
-    display: block;
-    width: max-content;
-    margin: 30px auto 0;
-    background: #25d366;
-    color: #fff;
-    padding: 14px 40px;
-    border-radius: 40px;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    user-select: none;
-  }
-  .btn-whatsapp:hover {
-    background: #1ebe57;
-  }
-  footer {
-    text-align: center;
-    padding: 15px;
-    background: rgba(18,15,85,0.95);
-    color: #aaa;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    user-select: none;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlanoX - SuaLoGo Aqui!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Orbitron&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f3e;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      font-size: 2.5rem;
+      padding: 30px 10px;
+      background: #1d1d5e;
+      font-weight: bold;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      color: #111;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 20px 0 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .preview {
+      margin-top: 30px;
+      width: 100%;
+      height: 200px;
+      border-radius: 16px;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .preview h3 {
+      font-size: 3rem;
+      margin: 0;
+      color: #111;
+    }
+    .btn-whatsapp {
+      display: block;
+      width: max-content;
+      margin: 40px auto 0;
+      background: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      background: #1d1d5e;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-<header>PlanoX - SuaLoGo Aqui!</header>
-<main>
-  <h2>Crie sua logo</h2>
+  <header>PlanoX - SuaLoGo Aqui!</header>
+  <main>
+    <h2>Crie sua Logo</h2>
 
-  <l
+    <label for="nomeMarca">Nome da marca:</label>
+    <input type="text" id="nomeMarca" placeholder="Ex: Lucas Ribeiro" />
+
+    <label for="fontSelect">Escolha a fonte:</label>
+    <select id="fontSelect">
+      <option value="'Poppins', sans-serif">Poppins</option>
+      <option value="'Dancing Script', cursive">Dancing Script</option>
+      <option value="'Orbitron', sans-serif">Orbitron</option>
+      <option value="'Playfair Display', serif">Playfair Display</option>
+      <option value="'Monoton', cursive">Monoton</option>
+    </select>
+
+    <label for="bgColorSelect">Escolha a cor do fundo:</label>
+    <select id="bgColorSelect">
+      <option value="white">Branco</option>
+      <option value="#ffdd59">Amarelo</option>
+      <option value="#0a74da">Azul</option>
+      <option value="#dc3545">Vermelho</option>
+      <option value="#28a745">Verde</option>
+      <option value="#343a40">Cinza escuro</option>
+    </select>
+
+    <div class="preview" id="preview">
+      <h3 id="logoPreview">Lucas Ribeiro</h3>
+    </div>
+
+    <button class="btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
+  </main>
+
+  <footer>&copy; 2025 PlanoX | Todos os direitos reservados</footer>
+
+  <script>
+    const nomeInput = document.getElementById('nomeMarca');
+    const fontSelect = document.getElementById('fontSelect');
+    const bgSelect = document.getElementById('bgColorSelect');
+    const preview = document.getElementById('preview');
+    const logoPreview = document.getElementById('logoPreview');
+    const btnWhatsapp = document.getElementById('btnWhatsapp');
+
+    function updatePreview() {
+      const nome = nomeInput.value.trim() || 'Lucas Ribeiro';
+      const fonte = fontSelect.value;
+      const bg = bgSelect.value;
+
+      logoPreview.textContent = nome;
+      logoPreview.style.fontFamily = fonte;
+      preview.style.backgroundColor = bg;
+    }
+
+    nomeInput.addEventListener('input', updatePreview);
+    fontSelect.addEventListener('change', updatePreview);
+    bgSelect.addEventListener('change', updatePreview);
+
+    btnWhatsapp.addEventListener('click', () => {
+      const nome = encodeURIComponent(nomeInput.value.trim() || 'Lucas Ribeiro');
+      const fonteTexto = fontSelect.options[fontS]()
