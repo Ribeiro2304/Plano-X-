@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PlanoX - SuaLoGo Aqui!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Orbitron&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Monoton&family=Orbitron&family=Playfair+Display&family=Poppins&family=Rubik+Moonrocks&family=Bebas+Neue&family=Indie+Flower&family=Shadows+Into+Light&family=Aclonica&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
       background: #0f0f3e;
       color: #fff;
+      margin: 0;
+      padding: 0;
     }
-    header {
-      text-align: center;
-      font-size: 2.5rem;
-      padding: 30px;
+    header, footer {
       background: #1d1d5e;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
       font-weight: bold;
       color: #ffdd59;
     }
@@ -27,149 +28,214 @@
       background: #fff;
       color: #111;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.3);
     }
-    h2 { text-align: center; margin-bottom: 30px; }
+    .intro-text {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
     label {
       display: block;
-      font-weight: 600;
-      margin: 20px 0 10px;
+      margin-top: 20px;
+      font-weight: bold;
     }
     input, select {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       font-size: 1rem;
+      margin-top: 5px;
       border-radius: 8px;
       border: 1px solid #ccc;
     }
     .examples {
       display: flex;
       gap: 15px;
-      margin-bottom: 30px;
       justify-content: center;
+      margin: 20px 0;
       flex-wrap: wrap;
     }
     .examples img {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       object-fit: contain;
-      border: 1px solid #ccc;
       border-radius: 10px;
+      border: 1px solid #ddd;
       background: #fafafa;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .examples img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #ffdd59;
+    }
+    .emoji-list {
+      margin-top: 8px;
+      font-size: 1.8rem;
+      user-select: none;
+    }
+    .emoji-list span {
+      cursor: pointer;
+      margin-right: 8px;
+      transition: transform 0.15s;
+    }
+    .emoji-list span:hover {
+      transform: scale(1.4);
     }
     .preview {
-      margin-top: 30px;
-      width: 100%;
-      height: 200px;
-      border-radius: 16px;
+      margin-top: 25px;
       background: #f0f0f0;
+      height: 220px;
+      border-radius: 12px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      transition: background 0.3s ease;
+      justify-content: center;
+      box-shadow: inset 0 0 10px #ccc;
     }
     .preview h3 {
       font-size: 3rem;
       margin: 0;
-      color: #111;
+      user-select: none;
     }
-    .btn-whatsapp {
+    .btn {
       display: block;
-      margin: 40px auto 0;
-      background: #25d366;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2rem;
+      margin: 20px auto 0;
+      padding: 12px 24px;
       border: none;
-      border-radius: 50px;
-      cursor: pointer;
+      border-radius: 30px;
       font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
     }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 20px;
-      background: #1d1d5e;
-      color: #aaa;
-    }
+    .btn-whatsapp { background: #25d366; color: white; }
+    .btn-download { background: #007bff; color: white; margin-top: 10px; }
   </style>
 </head>
 <body>
   <header>PlanoX - SuaLoGo Aqui!</header>
   <main>
-    <h2>Crie sua Logo</h2>
+    <div class="intro-text">Mudando vidas, sua arte visual é aqui!</div>
 
-    <!-- Imagens de exemplo -->
     <div class="examples">
-      <img src="https://via.placeholder.com/100x100?text=Logo+1" alt="Exemplo 1">
-      <img src="https://via.placeholder.com/100x100?text=Logo+2" alt="Exemplo 2">
-      <img src="https://via.placeholder.com/100x100?text=Logo+3" alt="Exemplo 3">
+      <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Logo Minimalista" title="Minimalista" />
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Logo Moderno" title="Moderno" />
+      <img src="https://cdn-icons-png.flaticon.com/512/252/252025.png" alt="Logo Vintage" title="Vintage" />
+      <img src="https://cdn-icons-png.flaticon.com/512/633/633600.png" alt="Logo Abstrato" title="Abstrato" />
     </div>
 
-    <!-- Entrada de nome -->
     <label for="nomeMarca">Nome da marca:</label>
-    <input type="text" id="nomeMarca" placeholder="Ex: Neo Arts">
+    <input type="text" id="nomeMarca" placeholder="Ex: Neo Arts" />
 
-    <!-- Fonte -->
-    <label for="fontSelect">Escolha a fonte:</label>
+    <label for="emojiExtra">Adicionar emoji ou símbolo:</label>
+    <input type="text" id="emojiExtra" placeholder="Ex: 🚀✨🔥❤️⚽🌹" />
+
+    <div class="emoji-list" id="emojiList">
+      <span>🚀</span>
+      <span>✨</span>
+      <span>🔥</span>
+      <span>❤️</span>
+      <span>⚽</span>
+      <span>🌹</span>
+      <span>🎨</span>
+      <span>⭐</span>
+      <span>💡</span>
+      <span>🎯</span>
+    </div>
+
+    <label for="fontSelect">Fonte:</label>
     <select id="fontSelect">
       <option value="'Poppins', sans-serif">Poppins</option>
-      <option value="'Dancing Script', cursive">Despojada</option>
-      <option value="'Orbitron', sans-serif">Futurista</option>
-      <option value="'Playfair Display', serif">Clássica</option>
-      <option value="'Monoton', cursive">Artística</option>
+      <option value="'Dancing Script', cursive">Dancing Script</option>
+      <option value="'Orbitron', sans-serif">Orbitron</option>
+      <option value="'Playfair Display', serif">Playfair Display</option>
+      <option value="'Monoton', cursive">Monoton</option>
+      <option value="'Rubik Moonrocks', cursive">Rubik Moonrocks</option>
+      <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+      <option value="'Indie Flower', cursive">Indie Flower</option>
+      <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+      <option value="'Aclonica', sans-serif">Aclonica</option>
+      <option value="'Press Start 2P', cursive">Press Start 2P</option>
     </select>
 
-    <!-- Cor de fundo -->
-    <label for="bgColorSelect">Escolha a cor do fundo:</label>
+    <label for="bgColorSelect">Cor de fundo:</label>
     <select id="bgColorSelect">
       <option value="white">Branco</option>
-      <option value="#ffdd59">Amarelo</option>
-      <option value="#0a74da">Azul</option>
+      <option value="#f8d7da">Rosa claro</option>
+      <option value="#d1ecf1">Azul claro</option>
+      <option value="#d4edda">Verde claro</option>
+      <option value="#fff3cd">Amarelo claro</option>
+      <option value="#e2e3e5">Cinza claro</option>
+      <option value="#ffc107">Amarelo</option>
+      <option value="#0d6efd">Azul</option>
+      <option value="#198754">Verde</option>
       <option value="#dc3545">Vermelho</option>
-      <option value="#28a745">Verde</option>
-      <option value="#343a40">Cinza escuro</option>
     </select>
 
-    <!-- Pré-visualização -->
     <div class="preview" id="preview">
       <h3 id="logoPreview">Neo Arts</h3>
     </div>
 
-    <!-- Botão WhatsApp -->
-    <button class="btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
+    <button class="btn btn-whatsapp" id="btnWhatsapp">Falar no WhatsApp</button>
+    <button class="btn btn-download" id="btnDownload">Baixar Logo (PNG)</button>
   </main>
-  <footer>&copy; 2025 PlanoX | Todos os direitos reservados</footer>
+  <footer>&copy; 2025 PlanoX</footer>
 
-  <!-- SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script>
     const nomeInput = document.getElementById("nomeMarca");
+    const emojiInput = document.getElementById("emojiExtra");
     const fontSelect = document.getElementById("fontSelect");
     const bgSelect = document.getElementById("bgColorSelect");
     const preview = document.getElementById("preview");
     const logoPreview = document.getElementById("logoPreview");
     const btnWhatsapp = document.getElementById("btnWhatsapp");
+    const btnDownload = document.getElementById("btnDownload");
+    const emojiList = document.getElementById("emojiList");
 
     function updatePreview() {
       const nome = nomeInput.value.trim() || "Neo Arts";
+      const emoji = emojiInput.value.trim();
       const fonte = fontSelect.value;
       const bg = bgSelect.value;
-      logoPreview.textContent = nome;
+
+      logoPreview.textContent = nome + (emoji ? " " + emoji : "");
       logoPreview.style.fontFamily = fonte;
       preview.style.background = bg;
     }
 
+    // Adicionar emoji clicado no campo emojiInput
+    emojiList.addEventListener("click", e => {
+      if (e.target.tagName === "SPAN") {
+        emojiInput.value += e.target.textContent;
+        updatePreview();
+        emojiInput.focus();
+      }
+    });
+
     nomeInput.addEventListener("input", updatePreview);
+    emojiInput.addEventListener("input", updatePreview);
     fontSelect.addEventListener("change", updatePreview);
     bgSelect.addEventListener("change", updatePreview);
 
     btnWhatsapp.addEventListener("click", () => {
       const nome = encodeURIComponent(nomeInput.value.trim() || "Neo Arts");
+      const emoji = encodeURIComponent(emojiInput.value.trim());
       const fonteTexto = fontSelect.options[fontSelect.selectedIndex].text;
       const fundoTexto = bgSelect.options[bgSelect.selectedIndex].text;
       const numero = "5522992594046";
-      const msg = `Olá, quero uma logo com o nome ${nome}, usando a fonte ${fonteTexto} e fundo ${fundoTexto}.`;
+      const msg = `Olá! Quero uma logo com o nome ${nome} ${emoji}, usando a fonte ${fonteTexto} e fundo ${fundoTexto}.`;
       window.open(`https://wa.me/${numero}?text=${msg}`, "_blank");
+    });
+
+    btnDownload.addEventListener("click", () => {
+      html2canvas(preview).then(canvas => {
+        const link = document.createElement('a');
+        link.download = "sualogo.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      });
     });
 
     updatePreview();
